@@ -1,0 +1,31 @@
+Pages:
+1. Main page (index.html)
+2. Student + teacher login pages (Login_page_student.html, Login_page_teacher.html)
+4. Student + teacher signup pages (Student_signup.html, Teacher_signup.html)
+6. student_dashboard.html
+7. student_lecture_screen.html
+8. teacher_dashboard.html
+9. submit_questions.html
+10. update_timetable.html
+11. teacher_lecture_screen.html
+12. admin_page.html
+
+
+=============================================================================
+Revised Journey:
+Student:
+Main page(index.html) -> after email authentication -> student_dashboard -> Join any course -> student_lecture_screen -> submit question -> end session -> dashboard.
+
+Teacher:
+Main page(index.html) -> after email authentication -> teacher_dashboard -> set/update time table-> update_timetable page -> Update the time table -> return to dashboard -> submit questions page (on another tab) -> return to dashboard on the first tab -> attend course -> teacher_lecture_screen -> get questions and put them on the submit questions page -> end session - > dashboard.
+
+=============================================================================
+Required data analysis:
+1. Number of students attended each session,How many questions are answered in each session, Content of the questions, which tutor answered these questions, Data collected summary on Admin page.
+
+
+
+
+
+
+
