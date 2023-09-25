@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
 
-from student.models import User
+from student.models import User, Questions
 
 # Create your views here.
 
@@ -63,6 +63,14 @@ def teacher_logout(request):
     return redirect('teacher_login')
 
 def submit_questions(request):
+    if request.method == 'POST':
+        teacher_question = request.POST.get('teacher_question')
+        teacher_answer = request.POST.get('teacher_answer')
+        ins=Questions(teacher_answer=teacher_answer ,student_question=teacher_question)
+        ins.save()
+        print(teacher_question)
+        print(teacher_answer)
+    
     return render(request,"submit_questions.html")
 
 def teacher_dashboard(request):

@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
+from .models import Questions
 
 from student.models import User
 
@@ -70,4 +71,11 @@ def student_dashboard(request):
 
 
 def student_lecture_screen(request):
+    
+    if request.method == 'POST':
+        student_question = request.POST.get('student_question')
+        ins=Questions(student_question=student_question)
+        ins.save()
+        print(student_question)
+    
     return render(request, "student_lecture_screen.html")
