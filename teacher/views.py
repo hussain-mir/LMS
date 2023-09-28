@@ -61,16 +61,21 @@ def teacher_login(request):
 def teacher_logout(request):
     logout(request)
     return redirect('teacher_login')
+import logging
+
+logger = logging.getLogger(__name__)
 
 def submit_questions(request):
     if request.method == 'POST':
         teacher_question = request.POST.get('teacher_question')
         teacher_answer = request.POST.get('teacher_answer')
-        ins=Questions(teacher_answer=teacher_answer ,student_question=teacher_question)
-        ins.save()
-        print(teacher_question)
-        print(teacher_answer)
-    
+     
+        try:
+            ins = Questions(teacher_answer=teacher_answer, teacher_question=teacher_question)
+            ins.save()
+            print("Data saved successfully.")
+        except Exception as e:            
+            print("Error saving data:", str(e))
     return render(request,"submit_questions.html")
 
 def teacher_dashboard(request):
